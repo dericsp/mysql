@@ -8,22 +8,26 @@
 	
 	}
 
-
+//Insert new value to a table
 //	$query = "INSERT INTO `users` (`email`, `password`) VALUES('tommy@gmail.com', 'ilovemydad')";
 
-	$query = "UPDATE `users` SET email = 'robpercival80@gmail.com' WHERE id = 1 LIMIT 1";
+//Update a value on a table
+//	$query = "UPDATE `users` SET password = 'adfasd1234' WHERE email = 'robpercival80@gmail.com', LIMIT 1";
+//
+//	mysqli_query($link, $query);
+//	executar a query
 
-	mysqli_query($link, $query);
-	
-	$query = "SELECT * FROM users";
+//Selecionando todos os dados da tabela
+	$query = "SELECT * FROM users WHERE email = kirsten@kirstenpercival.co.uk";
 
 	if ($result = mysqli_query($link, $query)) {
 		
 		$row = mysqli_fetch_array($result);
 		
-//		print_r($row);
-		
-		echo "Your email is ".$row['email']." And your password is ".$row['password'];
+		while ($row = mysqli_fetch_array($result)) {
+
+			print_r($row);
+		}
 	}
 
 ?>
